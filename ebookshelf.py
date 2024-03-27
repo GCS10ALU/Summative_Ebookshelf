@@ -18,6 +18,7 @@ class Library:
         self.books.append(book)
         self.save_books()
 
+
     def save_books(self):
         with open(self.filename, "a") as file:  # Use "a" for append mode
             for book in self.books[-1:]:  # Save only the last added book
@@ -36,8 +37,34 @@ class Library:
 
     def get_book(self, index):
         return self.books[index]
-    
-     def read_book(self):
+
+
+class SchoolLibrarySystem:
+    def __init__(self):
+        self.library = Library()
+
+    def start(self):
+        print("Welcome to the School Library System!")
+        print("You have the following options:")
+        while True:
+            print("1. Read a book")
+            print("2. Record a book")
+            print("3. Search for a book")
+            print("4. Exit")
+            choice = input("Enter the number corresponding to your choice: ")
+            if choice == "1":
+                self.read_book()
+            elif choice == "2":
+                self.record_book()
+            elif choice == "3":
+                self.search_book()
+            elif choice == "4":
+                print("Thank you for using the School Library System. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Please enter a valid option.")
+
+    def read_book(self):
         print("\nList of available books:")
         self.library.display_books()
         choice = input("\nEnter the number of the book you want to read: ")

@@ -66,3 +66,18 @@ class Library:
         self.library.add_book(new_book)
         print("\nBook recorded successfully.")
 
+    def search_book(self):
+        query = input("\nEnter the title or author of the book you want to search: ")
+        results = self.library.search_book(query)
+        if results:
+            print("\nSearch results:")
+            for i, book in enumerate(results, start=1):
+                print(f"{i}. {book.title} by {book.author}")
+        else:
+            print("\nNo matching books found.")
+
+
+# Main program
+if __name__ == "__main__":
+    school_library_system = SchoolLibrarySystem()
+    school_library_system.start()

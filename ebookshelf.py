@@ -36,3 +36,33 @@ class Library:
 
     def get_book(self, index):
         return self.books[index]
+    
+     def read_book(self):
+        print("\nList of available books:")
+        self.library.display_books()
+        choice = input("\nEnter the number of the book you want to read: ")
+        try:
+            index = int(choice) - 1
+            selected_book = self.library.get_book(index)
+            print("\nReading book:", selected_book.title)
+            print(selected_book.content)
+            while True:
+                option = input("\nContinue reading? (Y/N): ")
+                if option.upper() == "Y":
+                    break
+                elif option.upper() == "N":
+                    return
+                else:
+                    print("Invalid input. Please enter Y or N.")
+        except (ValueError, IndexError):
+            print("Invalid input. Please enter a valid number.")
+
+    def record_book(self):
+        print("\nRecording a new book:")
+        title = input("Enter the name of the book: ")
+        author = input("Enter the name of the author: ")
+        content = input("Enter the content of the book: ")
+        new_book = Book(title, author, content)
+        self.library.add_book(new_book)
+        print("\nBook recorded successfully.")
+

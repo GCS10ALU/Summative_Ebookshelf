@@ -17,15 +17,22 @@ class Library:
     def add_book(self, book):
         self.books.append(book)
         self.save_books()
- def load_books(self):
-        try:
-            with open(self.filename, "r") as file:
-                lines = file.readlines()
-                for i in range(0, len(lines), 4):
-                    title = lines[i].strip()
-                    author = lines[i+1].strip()[4:]  # Remove "By: " prefix
-                    content = lines[i+3].strip()
-                    self.books.append(Book(title, author, content))
-        except FileNotFoundError:
-            print("No library file found. Starting with an empty library.")
 
+    def save_books(self):
+        with open(self.filename, "a") as file:  # Use "a" for append mode
+            for book in self.books[-1:]:  # Save only the last added book
+                file.write(str(book) + "\n")
+
+    def display_books(self):
+        for i, book in enumerate(self.books, start=1):
+            print(f"{i}. {book.title} by {book.author}")
+
+    def search_book(self, query):
+        results = []
+        for book in self.books:
+            if query.lower() in book.title.lower() or query.lower() in book.author.lower():
+                results.append(book)
+        return results
+
+    def get_book(self, index):
+        return self.books[index]

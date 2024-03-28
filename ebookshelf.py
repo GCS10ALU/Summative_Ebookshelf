@@ -53,7 +53,7 @@ class Library:
 class SchoolLibrarySystem:
     def __init__(self):
         self.library = Library()
-
+    # starting point of the system
     def start(self):
         print("Welcome to the School Library System!")
         print("You have the following options:")

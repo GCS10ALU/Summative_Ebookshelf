@@ -115,7 +115,7 @@ class SchoolLibrarySystem:
             print("\nNo matching books found.")
 
 
-# Main program
+# Main program (The brain of the system)
 if __name__ == "__main__":
     school_library_system = SchoolLibrarySystem()
     school_library_system.start()

@@ -16,7 +16,7 @@ class Library:
 
     def add_book(self, book):
         self.books.append(book)
-        self.save_books()
+        self.save_books() # saving books in a file called library.txt
 
     def load_books(self):
         try:

@@ -77,7 +77,7 @@ class SchoolLibrarySystem:
                 print("Invalid choice. Please enter a valid option.")
 
     def read_book(self):
-        print("\nList of available books:")
+        print("\nList of available books in the Ebookshelf:")
         self.library.display_books()
         choice = input("\nEnter the number of the book you want to read: ")
         try:

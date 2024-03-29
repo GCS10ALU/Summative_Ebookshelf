@@ -16,23 +16,24 @@ class Library:
 
     def add_book(self, book):
         self.books.append(book)
-        self.save_books() # saving books in a file called library.txt
+        self.save_books()
 
     def load_books(self):
         try:
             with open(self.filename, "r") as file:
                 lines = file.readlines()
                 for i in range(0, len(lines), 4):
-                    title = lines[i].strip()
-                    author = lines[i+1].strip()[4:]  # Remove "By: " prefix
-                    content = lines[i+3].strip()
-                    self.books.append(Book(title, author, content))
+                    if i + 3 < len(lines):  # Ensure there are enough lines for a book
+                        title = lines[i].strip()
+                        author = lines[i+1].strip()[4:]  # Remove "By: " prefix
+                        content = lines[i+2].strip()  # Use i+2 for content
+                        self.books.append(Book(title, author, content))
         except FileNotFoundError:
             print("No library file found. Starting with an empty library.")
 
     def save_books(self):
-        with open(self.filename, "a") as file:  # Use "a" for append mode
-            for book in self.books[-1:]:  # Save only the last added book
+        with open(self.filename, "w") as file:  # Use "w" to overwrite existing content
+            for book in self.books:
                 file.write(str(book) + "\n")
 
     def display_books(self):
@@ -53,7 +54,7 @@ class Library:
 class SchoolLibrarySystem:
     def __init__(self):
         self.library = Library()
-    # starting point of the system
+
     def start(self):
         print("Welcome to the School Library System!")
         print("You have the following options:")
@@ -115,7 +116,8 @@ class SchoolLibrarySystem:
             print("\nNo matching books found.")
 
 
-# Main program (The brain of the system)
+# Main program
 if __name__ == "__main__":
     school_library_system = SchoolLibrarySystem()
     school_library_system.start()
+

@@ -1,3 +1,5 @@
+import mysql.connector
+
 class Book:
     def __init__(self, title, author, content):
         self.title = title
@@ -9,46 +11,44 @@ class Book:
 
 
 class Library:
-    def __init__(self, filename="library.txt"):
-        self.filename = filename
-        self.books = []
-        self.load_books()
+    def __init__(self):
+        self.connection = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password="1251Rama1251@rshafii106",
+            database="library_db"
+            )
+        self.cursor = self.connection.cursor()
+        self.create_table()
+
+    def create_table(self):
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS books (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), author VARCHAR(255), content TEXT)")
 
     def add_book(self, book):
-        self.books.append(book)
-        self.save_books()
+        sql = "INSERT INTO books (title, author, content) VALUES (%s, %s, %s)"
+        values = (book.title, book.author, book.content)
+        self.cursor.execute(sql, values)
+        self.connection.commit()
 
     def load_books(self):
-        try:
-            with open(self.filename, "r") as file:
-                lines = file.readlines()
-                for i in range(0, len(lines), 4):
-                    if i + 3 < len(lines):  # Ensure there are enough lines for a book
-                        title = lines[i].strip()
-                        author = lines[i+1].strip()[4:]  # Remove "By: " prefix
-                        content = lines[i+2].strip()  # Use i+2 for content
-                        self.books.append(Book(title, author, content))
-        except FileNotFoundError:
-            print("No library file found. Starting with an empty library.")
-
-    def save_books(self):
-        with open(self.filename, "w") as file:  # Use "w" to overwrite existing content
-            for book in self.books:
-                file.write(str(book) + "\n")
+        self.cursor.execute("SELECT * FROM books")
+        rows = self.cursor.fetchall()
+        return [Book(row[1], row[2], row[3]) for row in rows]
 
     def display_books(self):
-        for i, book in enumerate(self.books, start=1):
-            print(f"{i}. {book.title} by {book.author}")
+        books = self.load_books()
+        if books:
+            for i, book in enumerate(books, start=1):
+                print(f"{i}. {book.title} by {book.author}")
+        else:
+            print("No books in the library.")
 
     def search_book(self, query):
-        results = []
-        for book in self.books:
-            if query.lower() in book.title.lower() or query.lower() in book.author.lower():
-                results.append(book)
-        return results
-
-    def get_book(self, index):
-        return self.books[index]
+        sql = "SELECT * FROM books WHERE title LIKE %s OR author LIKE %s"
+        values = (f"%{query}%", f"%{query}%")
+        self.cursor.execute(sql, values)
+        rows = self.cursor.fetchall()
+        return [Book(row[1], row[2], row[3]) for row in rows]
 
 
 class SchoolLibrarySystem:
@@ -77,12 +77,12 @@ class SchoolLibrarySystem:
                 print("Invalid choice. Please enter a valid option.")
 
     def read_book(self):
-        print("\nList of available books in the Ebookshelf:")
+        print("\nList of available books:")
         self.library.display_books()
         choice = input("\nEnter the number of the book you want to read: ")
         try:
             index = int(choice) - 1
-            selected_book = self.library.get_book(index)
+            selected_book = self.library.load_books()[index]
             print("\nReading book:", selected_book.title)
             print(selected_book.content)
             while True:
@@ -92,7 +92,7 @@ class SchoolLibrarySystem:
                 elif option.upper() == "N":
                     return
                 else:
-                    print("Invalid input. Please enter Y or N.")
+                    print("Invalid input. Please enter Y or N ")
         except (ValueError, IndexError):
             print("Invalid input. Please enter a valid number.")
 
@@ -109,7 +109,7 @@ class SchoolLibrarySystem:
         query = input("\nEnter the title or author of the book you want to search: ")
         results = self.library.search_book(query)
         if results:
-            print("\nSearch results for the books:")
+            print("\nSearch results:")
             for i, book in enumerate(results, start=1):
                 print(f"{i}. {book.title} by {book.author}")
         else:
@@ -120,4 +120,3 @@ class SchoolLibrarySystem:
 if __name__ == "__main__":
     school_library_system = SchoolLibrarySystem()
     school_library_system.start()
-

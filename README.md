@@ -39,8 +39,8 @@ To achieve the desired functionality for our program, we will implement the foll
    5. Show your statistics (5)                        
    6. Exit (6)
 
-5. Enter the number corresponding to your choice:
-6. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options:
+
+5. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options:
 
    1. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. Example; (When the Breath Becomes Aire by Paul Kalanithi). 
    2. A user will also be provided an interface to input to choose the ISN number of book that they want to read a book from the list.
@@ -48,7 +48,7 @@ To achieve the desired functionality for our program, we will implement the foll
    4. If the user finishes reading the book, the user will be asked if she wants to continue reading, record a book, or exit.
    5. The system will take the user to the appropriate section depending on the input provided in point (4).
    
-7. If the user chooses 2 (Record a book), the user will be presented with the interface that asks her the:
+6. If the user chooses 2 (Record a book), the user will be presented with the interface that asks her the:
 
    1. The name of the book >> the user will provide input
    2. The name of the author >> the user will provide input

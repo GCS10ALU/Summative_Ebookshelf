@@ -31,14 +31,15 @@ To achieve the desired functionality for our program, we will implement the foll
 2. Users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
 3. This is an example of how it will look like:
 
- 1. Read a book
- 2. Record a book
- 3. Search for a book
- 4. Filter books
- 5. See your statistics                        
- 6. Exit
+   1. Read a book
+   2. Record a book
+   3. Search for a book
+   4. Filter books
+   5. See your statistics                        
+   6. Exit
 
 7. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options.
+   
    1. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. E.g., 1. When the Breath Becomes Aire by Paul Kalanithi. 
             2. A user will also be provided an interface to input to choose the ISN number of book that they want to read a book from the list.
             3. After inputting the number of the book, a user will be able to read the book via the terminal.

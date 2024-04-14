@@ -28,21 +28,21 @@ To achieve the desired functionality for our program, we will implement the foll
 #### RUNNING THE APPLICATION 
 
 1. Users will interact with the online school shell library through the terminal.
-   a. Users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
-      i. This is an example of how it will look like: 
+  a. Users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
+  i. This is an example of how it will look like: 
             1. Read a book
             2. Record a book
             3.Search for a book
             4.Filter books
             5. See your statistics                        
             6. Exit
-      ii. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options.
-            1. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. E.g., 1. When the Breath Becomes Aire by Paul Kalanithi. 
+  ii. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options.
+   1. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. E.g., 1. When the Breath Becomes Aire by Paul Kalanithi. 
             2. A user will also be provided an interface to input to choose the ISN number of book that they want to read a book from the list.
             3. After inputting the number of the book, a user will be able to read the book via the terminal.
             4. If the user finishes reading the book, the user will be asked if she wants to continue reading, record a book, or exit.
             5. The system will take the user to the appropriate section depending on the input provided in point (4).
-      iii. If the user chooses 2 (Record a book), the user will be presented with the interface that asks her the:
+  iii. If the user chooses 2 (Record a book), the user will be presented with the interface that asks her the:
             1. The name of the book >> the user will provide input
             2. The name of the author >> the user will provide input
             3. The content of the book >> The user will also provide input

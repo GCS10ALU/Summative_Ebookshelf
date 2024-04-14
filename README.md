@@ -28,30 +28,32 @@ To achieve the desired functionality for our program, we will implement the foll
 #### RUNNING THE APPLICATION 
 
 1. Users will interact with the online school shell library through the terminal.
-2. Users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
-3. This is an example of how it will look like:
+2. First, users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
+3. This is an example of how it will look like,
+4. You have the following options:
 
    1. Read a book (1)
    2. Record a book (2)
    3. Search for a book (3)
-   4. Filter books (4)
-   5. See your statistics (5)                        
+   4. Filter books by genre and your published (4)
+   5. Show your statistics (5)                        
    6. Exit (6)
 
-4. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options.
+5. Enter the number corresponding to your choice:
+6. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options:
+
+   1. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. Example; (When the Breath Becomes Aire by Paul Kalanithi). 
+   2. A user will also be provided an interface to input to choose the ISN number of book that they want to read a book from the list.
+   3. After inputting the number of the book, a user will be able to read the book via the terminal.
+   4. If the user finishes reading the book, the user will be asked if she wants to continue reading, record a book, or exit.
+   5. The system will take the user to the appropriate section depending on the input provided in point (4).
    
-   i. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. (For example);
-            1. When the Breath Becomes Aire by Paul Kalanithi. 
-            2. A user will also be provided an interface to input to choose the ISN number of book that they want to read a book from the list.
-            3. After inputting the number of the book, a user will be able to read the book via the terminal.
-            4. If the user finishes reading the book, the user will be asked if she wants to continue reading, record a book, or exit.
-            5. The system will take the user to the appropriate section depending on the input provided in point (4).
-   
-   ii. If the user chooses 2 (Record a book), the user will be presented with the interface that asks her the:
-            1. The name of the book >> the user will provide input
-            2. The name of the author >> the user will provide input
-            3. The content of the book >> The user will also provide input
-            4. The system will save and record that book, and the user will be asked to go to the menu in (i) again and so forth.
+7. If the user chooses 2 (Record a book), the user will be presented with the interface that asks her the:
+
+   1. The name of the book >> the user will provide input
+   2. The name of the author >> the user will provide input
+   3. The content of the book >> The user will also provide input
+   4. The system will save and record that book, and the user will be asked to go to the menu in (i) again and so forth.
 
 ##### CONTRIBUTORS
 

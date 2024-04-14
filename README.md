@@ -28,8 +28,8 @@ To achieve the desired functionality for our program, we will implement the foll
 #### RUNNING THE APPLICATION 
 
 1. Users will interact with the online school shell library through the terminal.
-  a. Users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
-  i. This is an example of how it will look like: 
+2. Users will be welcomed to the system and presented with an introduction to the functionalities and guidelines of our school library system.
+3.  This is an example of how it will look like: 
             1. Read a book
             2. Record a book
             3.Search for a book

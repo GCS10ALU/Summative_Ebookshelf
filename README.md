@@ -18,8 +18,12 @@ To achieve the desired functionality for our program, we will implement the foll
 
 1. Welcome Function: This function serves as the entry point for users, providing a friendly introduction to eBook Shelf and guiding them through its features and functionalities.
 2. Bookshelf Display: Using Python's capabilities, this function dynamically presents a curated collection of eBooks categorized by genre, making it easy for students to discover new titles aligned with their interests.
-3. Read Function: Leveraging Python's file handling capabilities, students can read eBooks directly within the terminal using command-line reading functionalities, providing a seamless reading experience without leaving the CLI environment.
-4. Main Function: This function will serve as the backbone of eBook Shelf, orchestrating the seamless integration of various features and functionalities to deliver an immersive and enjoyable reading experience for students.
+3. Read Function: Users can access the platform'extensive library database and select the book they want to read. The interface is userfriendly, allowing easy navigation and quick access to desired titles.
+4. Record a book function: Users can contribute to our growing collection by adding their preferred books to the database with this feature. By fostering a culture of sharing and collaboration, we aim to expand our resources and provide our users a diverse range of reading materials.
+5. Search function: This convenient option lets users quickly find their desired book by searching for the title. It streamlines the process and saves time, ensuring users can easily locate and enjoy their chosen reads.
+6. Filter books by Genre and publishing year: Simplify your browsing experience with this feature, allowing users to narrow down their search based on genre and publication year. It enhances efficiency and convenience, making discovering books tailored to your interests effortless. 
+7. Main Function: This function will serve as the backbone of eBook Shelf, orchestrating the seamless integration of various features and functionalities to deliver an immersive and enjoyable reading experience for students.
+8. Exit application : This option allows users to exit the application according to their preferences, ensuring a seamless and customizable user experience.
 
 #### RUNNING THE APPLICATION 
 
@@ -28,7 +32,10 @@ To achieve the desired functionality for our program, we will implement the foll
       i. This is an example of how it will look like: 
             1. Read a book
             2. Record a book
-            3. Exit
+            3.Search for a book
+            4.Filter books
+            5. See your statistics                        
+            6. Exit
       ii. If a user chooses to (1) Read a book, they will be presented with the following interface with the following options.
             1. A user will be presented with a list of books containing names of the books, authors, and the ISN number of the book. E.g., 1. When the Breath Becomes Aire by Paul Kalanithi. 
             2. A user will also be provided an interface to input to choose the ISN number of book that they want to read a book from the list.
@@ -58,10 +65,4 @@ Contribution to the E-Bookshelf project are welcomed! To contribute;
 3. Commit Your Changes: As you make changes to the codebase, commit them to your branch with descriptive commit messages. Aim to make small, focused commits that address specific issues or implement individual features; (git commit -m "Add some name-of-the-feature").
 4. Push to the branch (git push origin feature/name-of-the-feature).
 5. Submit a Pull Request: submit a pull request to the main eBookshelf repository.
-
-
-
-
-
-
 
